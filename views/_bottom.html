@@ -1,0 +1,29 @@
+
+
+<footer class="d-flex w-full px-2 py-4 bg-c-charocoal:-16" md="px-10%">
+    <div>
+        <a href="/" class="text-c-white">Wolt</a>
+    </div>
+</footer>
+
+
+<script>
+    mojo()
+</script>
+<script src="/mixhtml.js"></script>    
+
+<script>
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page was restored from the back-forward cache
+            window.location.reload() 
+            console.log('Page loaded from bfcache');
+        } else {
+            // Page was loaded normally
+            console.log('Page loaded normally');
+        }
+    });    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+%import x
+
+%include("_top")
+
+<main class="w-full h-full d-flex a-items-center p-content-center text-c-white">
+
+    <form id="login" class="d-flex flex-col w-25%">
+
+
+        <div>
+            <label for="user_email" class="">
+                Email
+            </label>
+            <input type="text" id="user_email" name="user_email" 
+            class="h-12 border-1 border-c-gray:+30 w-full outline-none pl-2 rounded-sm"
+            mix-check="{{ x.EMAIL_REGEX }}">
+        </div>
+        <div class="mt-2">
+            <label for="user_password" class="d-flex">
+                <span>Password</span>
+                <span class="ml-auto text-c-gray:+25">
+                    {{ x.USER_PASSWORD_MIN }} to {{ x.USER_PASSWORD_MAX }} characters
+                </span>
+            </label>
+            <input type="password" id="user_password" name="user_password" 
+            class="h-12 border-1 border-c-gray:+30 w-full outline-none pl-2 rounded-sm"
+            mix-check="{{ x.USER_PASSWORD_REGEX }}"
+            >
+        </div>
+        <button class="mt-8 h-12 bg-c-tealblue text-c-white rounded-sm"
+        mix-post="/login"
+        mix-data="#login"
+        >
+            Login
+        </button>        
+    </form>
+
+    
+</main>
+
+%include("_bottom")

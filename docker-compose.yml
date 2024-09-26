@@ -1,0 +1,15 @@
+services:
+  python:
+    # Shows the output from print() in the terminal
+    environment:
+      - PYTHONUNBUFFERED=1    
+    container_name: wolt_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./:/app
+
+
